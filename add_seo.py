@@ -33,8 +33,12 @@ for file_path in html_files:
 
     # 3. Add Alt tags to images that don't have them
     # For Unsplash, just add alt="Lisboa Legal Group"
-    content = re.sub(r'<img((?!alt=)[^>])+>', lambda m: m.group(0)[:-1] + ' alt="Lisboa Legal Group">', content)
-
+    content = re.sub(
+        r'(<img(?![^>]*\balt=)[^>]*?)>', 
+        r'\1 alt="Lisboa Legal Group">', 
+        content,
+        flags=re.IGNORECASE
+    )
     # 4. Add Privacy Policy link to Footer
     if 'privacidad.html' not in content.split('<footer>')[-1]:
         content = re.sub(

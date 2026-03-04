@@ -1,0 +1,380 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link rel="icon" href="ChatGPT Image 26 ago 2025, 14_11_32.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sucesiones y Herencias - Lisboa Legal Group.">
+    <title>Sucesiones | Lisboa Legal Group</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&family=Playfair+Display:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-blue: #05142a;
+            --dark-bg: #030a15;
+            --accent-gold: #d4af37;
+            --accent-gold-hover: #b5952f;
+            --text-dark: #1F2937;
+            --white: #FFFFFF;
+            --bg-light: #FAFAFA;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            margin: 0;
+            padding-top: 0;
+            background-color: var(--bg-light);
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-blue);
+        }
+
+        a {
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: transparent;
+            box-shadow: none;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            position: absolute;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            height: 125px;
+            display: flex;
+            align-items: center;
+        }
+
+
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        /* Destacando el logo */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            height: 105px;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-img:hover {
+            transform: scale(1.05);
+        }
+
+        .btn-gold {
+            background-color: var(--accent-gold);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 4px;
+            font-weight: 700;
+            text-transform: uppercase;
+            border: none;
+            letter-spacing: 1px;
+            display: inline-block;
+        }
+
+        .btn-gold:hover {
+            background-color: var(--accent-gold-hover);
+            transform: translateY(-2px);
+        }
+
+        .area-hero {
+            background: linear-gradient(rgba(5, 20, 42, 0.8), rgba(5, 20, 42, 0.9)), url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 120px 0 80px 0;
+            text-align: center;
+        }
+
+        .area-hero h1 {
+            color: var(--white);
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .area-hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .content-section {
+            padding: 80px 0;
+        }
+
+        .grid-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 60px;
+        }
+
+        @media(max-width: 900px) {
+            .grid-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .main-text p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            color: #444;
+        }
+
+        .main-text h2 {
+            font-size: 2.2rem;
+            margin: 40px 0 20px 0;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 30px 0;
+        }
+
+        .feature-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            font-size: 1.05rem;
+        }
+
+        .feature-list i {
+            color: var(--accent-gold);
+            font-size: 1.2rem;
+            margin-top: 5px;
+        }
+
+        .sidebar {
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.05);
+            border-top: 4px solid var(--accent-gold);
+            height: fit-content;
+        }
+
+        .sidebar h3 {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .services-menu {
+            list-style: none;
+            padding: 0;
+        }
+
+        .services-menu li {
+            margin-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .services-menu a {
+            color: #555;
+            display: block;
+            font-weight: 600;
+        }
+
+        .services-menu a:hover,
+        .services-menu a.active {
+            color: var(--accent-gold);
+            padding-left: 5px;
+        }
+
+        footer {
+            background-color: var(--primary-blue);
+            color: #fff;
+            padding: 40px 0;
+            text-align: center;
+            border-top: 3px solid var(--accent-gold);
+            margin-top: 60px;
+        }
+
+
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            font-weight: 700;
+            text-transform: none;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+            position: relative;
+            text-decoration: none;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent-gold);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-gold);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .lang-switch {
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: var(--white);
+            display: flex;
+            gap: 5px;
+            align-items: center;
+        }
+
+        .lang-switch a {
+            color: var(--white);
+            opacity: 0.6;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .lang-switch a.active,
+        .lang-switch a:hover {
+            color: var(--accent-gold);
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container navbar">
+            <!-- Logo principal fuertemente destacado -->
+            <a href="index.html" class="logo-container">
+                <img src="ChatGPT Image 26 ago 2025, 14_11_32.png" alt="Lisboa Legal Group Logo" class="logo-img">
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="index.html#servicios">Áreas de Práctica</a></li>
+                    <li><a href="index.html#equipo">Socios</a></li>
+                    <li><a href="index.html#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+            <div style="display: flex; align-items: center; gap: 20px; ">
+                <div class="lang-switch">
+                    <a href="#" class="active">ES</a> | <a href="#">EN</a>
+                </div>
+                <a href="index.html#contacto" class="btn btn-gold mobile-hidden">Consulta</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="area-hero">
+        <div class="container">
+            <h1>Derecho de Sucesiones</h1>
+            <p>Planificación patrimonial rigurosa y hereditaria dictada a su medida para asegurar y proteger sus bienes.
+            </p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container grid-content">
+            <div class="main-text">
+                <h2>Protección Integral de su Legado</h2>
+                <p>Las cuestiones de herencia pueden ser propensas a disputas prolongadas, costosas y emocionalmente
+                    difíciles. <strong>Lisboa Legal Group</strong> brinda una atención analítica sobre la masa
+                    hereditaria en disputa. Desde elaborados planeamientos sucesorios pre-mortem, como blindajes vía
+                    fideicomisos familiares, hasta la representación exhaustiva en procesos contenciosos de herencias y
+                    legados.</p>
+                <p>Nuestro departamento trabaja junto a peritos financieros y tasadores de bienes raíces con experiencia
+                    de múltiples años en mercado abierto.</p>
+
+                <h2>Nuestros Servicios Especializados</h2>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check-circle"></i> <strong>Otorgamiento Notarial de Testamentos:</strong>
+                        Estructuración formal y correcta distribución de tercios de libre disposición.</li>
+                    <li><i class="fas fa-check-circle"></i> <strong>Inventario y Avalúo de Bienes
+                            Patrimoniales.</strong></li>
+                    <li><i class="fas fa-check-circle"></i> <strong>Litigios Successorios (Herederos Ab
+                            Intestato):</strong> Representación estratégica en casos que incluyan ocultación de bienes
+                        (lesión).</li>
+                    <li><i class="fas fa-check-circle"></i> <strong>Posesiones Efectivas y Exenciones:</strong> Trámites
+                        integrales tributarios del legado familiar para la adquisición ágil y lícita.</li>
+                </ul>
+
+                <div
+                    style="margin-top: 50px; background: var(--primary-blue); color: white; padding: 40px; border-radius: 8px; text-align: center;">
+                    <h3 style="color: white; margin-bottom: 15px;">Aseguremos su Patrimonio y su Futuro</h3>
+                    <p style="margin-bottom: 25px; opacity: 0.9;">Permita que nuestros experimentados asesores preserven
+                        su legado familiar sin dilación.</p>
+                    <a href="index.html#contacto" class="btn btn-gold">Contactar Especialista</a>
+                </div>
+            </div>
+
+            <aside class="sidebar">
+                <h3>Otras Áreas de Práctica</h3>
+                <ul class="services-menu">
+                    <li><a href="penal.html">Derecho Penal</a></li>
+                    <li><a href="civil.html">Derecho Civil</a></li>
+                    <li><a href="familia.html">Derecho de Familia</a></li>
+                    <li><a href="constitucional.html">Derecho Constitucional</a></li>
+                    <li><a href="administrativo.html">Derecho Administrativo</a></li>
+                    <li><a href="compliance.html">Compliance</a></li>
+                    <li><a href="sucesiones.html" class="active">Sucesiones</a></li>
+                    <li><a href="laboral.html">Derecho Laboral</a></li>
+                    <li><a href="societario.html">Derecho Societario</a></li>
+                </ul>
+            </aside>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Lisboa Legal Group. | <a href="privacidad.html" style="color: #ccc; text-decoration: underline; margin-left:10px; font-size: 0.9rem;">PolÃ­ticas de Privacidad</a></p>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>

@@ -1,0 +1,450 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link rel="icon" href="ChatGPT Image 26 ago 2025, 14_11_32.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Perfil de Karol Carvajal - Socios de Lisboa Legal Group.">
+    <title>Karol Carvajal | Lisboa Legal Group</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&family=Playfair+Display:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-blue: #05142a;
+            --dark-bg: #030a15;
+            --accent-gold: #d4af37;
+            --accent-gold-hover: #b5952f;
+            --text-dark: #1F2937;
+            --white: #FFFFFF;
+            --bg-light: #FAFAFA;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            margin: 0;
+            padding-top: 0;
+            background-color: var(--bg-light);
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-blue);
+        }
+
+        a {
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: transparent;
+            box-shadow: none;
+            transition: background-color 0.4s ease, box-shadow 0.4s ease, height 0.4s ease;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            height: 125px;
+            display: flex;
+            align-items: center;
+        }
+
+        header.scrolled {
+            background-color: rgba(5, 20, 42, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            height: 90px;
+        }
+
+        header.scrolled .logo-img {
+            height: 70px;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            height: 105px;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-img:hover {
+            transform: scale(1.05);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 4px;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            border: none;
+            letter-spacing: 1px;
+            transition: all 0.4s ease;
+        }
+
+        .btn-gold {
+            background-color: var(--accent-gold);
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+        }
+
+        .btn-gold:hover {
+            background-color: var(--accent-gold-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.6);
+        }
+
+        .hero-profile {
+            background: linear-gradient(rgba(5, 20, 42, 0.85), rgba(5, 20, 42, 0.95)), url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--white);
+            padding: 150px 0 80px 0;
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .profile-img-large {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 6px solid var(--accent-gold);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .profile-title h1 {
+            color: var(--white);
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            line-height: 1.1;
+        }
+
+        .profile-title h2 {
+            color: var(--accent-gold);
+            font-size: 1.5rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+
+        .profile-social a {
+            color: var(--white);
+            font-size: 1.5rem;
+            margin-right: 15px;
+            transition: color 0.3s;
+        }
+
+        .profile-social a:hover {
+            color: var(--accent-gold);
+        }
+
+        .content-section {
+            padding: 80px 0;
+        }
+
+        .grid-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 60px;
+        }
+
+        @media(max-width: 900px) {
+            .grid-content {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-header {
+                justify-content: center;
+                text-align: center;
+            }
+        }
+
+        .main-text p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            color: #444;
+            line-height: 1.8;
+        }
+
+        .main-text h3 {
+            font-size: 2rem;
+            margin: 40px 0 20px 0;
+            border-bottom: 2px solid var(--accent-gold);
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        .experience-list {
+            list-style: none;
+            padding: 0;
+            margin: 30px 0;
+        }
+
+        .experience-list li {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            font-size: 1.05rem;
+        }
+
+        .experience-list i {
+            color: var(--accent-gold);
+            font-size: 1.2rem;
+            margin-top: 5px;
+        }
+
+        .sidebar {
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.05);
+            border-top: 4px solid var(--accent-gold);
+            height: fit-content;
+        }
+
+        .sidebar h4 {
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+        }
+
+        .contact-card {
+            margin-bottom: 30px;
+        }
+
+        .contact-card p {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #555;
+        }
+
+        .contact-card i {
+            color: var(--primary-blue);
+        }
+
+        footer {
+            background-color: var(--primary-blue);
+            color: #fff;
+            padding: 40px 0;
+            text-align: center;
+            border-top: 3px solid var(--accent-gold);
+            margin-top: 60px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            font-weight: 700;
+            text-transform: none;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+            position: relative;
+            text-decoration: none;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent-gold);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-gold);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .lang-switch {
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: var(--white);
+            display: flex;
+            gap: 5px;
+            align-items: center;
+        }
+
+        .lang-switch a {
+            color: var(--white);
+            opacity: 0.6;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .lang-switch a.active,
+        .lang-switch a:hover {
+            color: var(--accent-gold);
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container navbar">
+            <a href="index.html" class="logo-container">
+                <img src="ChatGPT Image 26 ago 2025, 14_11_32.png" alt="Lisboa Legal Group Logo" class="logo-img">
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="index.html#servicios">Áreas de Práctica</a></li>
+                    <li><a href="index.html#equipo">Socios</a></li>
+                    <li><a href="index.html#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+            <div style="display: flex; align-items: center; gap: 20px; ">
+                <div class="lang-switch">
+                    <a href="#" class="active">ES</a> | <a href="#">EN</a>
+                </div>
+                <a href="index.html#contacto" class="btn btn-gold mobile-hidden">Consulta</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero-profile">
+        <div class="container profile-header">
+            <img src="fotocarol.jpg" alt="Karol Carvajal" class="profile-img-large">
+            <div class="profile-title">
+                <h1>Karol Carvajal</h1>
+                <h2>Socia Fundadora / Negocios e Inversiones</h2>
+                <div class="profile-social">
+                    <a href="https://www.linkedin.com/company/lisboa-legal-group" target="_blank"><i
+                            class="fab fa-linkedin"></i></a>
+                    <a href="mailto:lisboalegalgroup@gmail.com"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container grid-content">
+            <div class="main-text">
+                <h3>Reseña Profesional</h3>
+                <p>Karol Carvajal es Socia Fundadora de <strong>Lisboa Legal Group</strong>, liderando la división de
+                    Derecho Civil, Comercial y Corporativo. Con una perspectiva altamente pragmática, Karol se
+                    especializa en la estructuración corporativa idónea para transacciones internacionales y protección
+                    patrimonial comercial.</p>
+                <p>Su visión de negocios sumada a su pericia contractual, la convierte en un activo invaluable para
+                    corporaciones que buscan mitigar riesgos comerciales agresivos al ingresar o consolidarse en los
+                    mercados ecuatorianos y extranjeros. Ha liderado exitosas fusiones, escisiones y due diligence legal
+                    corporativo.</p>
+
+                <h3>Estudios y Credenciales</h3>
+                <ul class="experience-list">
+                    <li><i class="fas fa-graduation-cap"></i> <strong>Abogada de los Tribunales de la República</strong>
+                        - Summa Cum Laude, Universidad de Excelencia.</li>
+                    <li><i class="fas fa-chart-line"></i> <strong>Especialización Superior en Práctica Civil y
+                            Notarial</strong>.</li>
+                    <li><i class="fas fa-handshake"></i> <strong>Magíster en Derecho Corporativo y Negocios
+                            Internacionales</strong>.</li>
+                </ul>
+
+                <h3>Áreas de Práctica Principales</h3>
+                <ul class="experience-list">
+                    <li><i class="fas fa-building"></i> <strong>Derecho Societario:</strong> Gobiernos corporativos,
+                        compliance y constitución y gestión de compañías.</li>
+                    <li><i class="fas fa-file-contract"></i> <strong>Derecho Civil y Contractual:</strong>
+                        Estructuración de contratos mercantiles a gran escala y blindaje patrimonial.</li>
+                    <li><i class="fas fa-globe-americas"></i> <strong>Inversión Extranjera:</strong> Asesoría
+                        migratoria-comercial y tributaria para inversionistas en Ecuador.</li>
+                </ul>
+            </div>
+
+            <aside class="sidebar">
+                <div class="contact-card">
+                    <h4>Contacto Directo</h4>
+                    <p><i class="fas fa-phone-alt"></i> +593 99 096 7952</p>
+                    <p><i class="fas fa-envelope"></i> lisboalegalgroup@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Guayaquil, Ecuador</p>
+                    <a href="index.html#contacto" class="btn btn-gold"
+                        style="width: 100%; text-align: center; margin-top: 15px;">Agendar Cita</a>
+                </div>
+
+                <h4 style="margin-top: 40px;">Otros Socios</h4>
+                <div style="border-top: 1px solid #eee; padding-top: 15px;">
+                    <a href="daniel-espinoza.html"
+                        style="display: flex; align-items: center; gap: 15px; color: var(--text-dark); font-weight: 600;">
+                        <img src="fotodaniel.jpg"
+                            style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;"
+                            alt="Daniel Espinoza">
+                        Daniel Espinoza
+                    </a>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Lisboa Legal Group. | <a href="privacidad.html" style="color: #ccc; text-decoration: underline; margin-left:10px; font-size: 0.9rem;">PolÃ­ticas de Privacidad</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Header Scroll Effect
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+
+</html>

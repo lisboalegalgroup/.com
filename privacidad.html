@@ -1,0 +1,350 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Política de Privacidad - Lisboa Legal Group.">
+    <title>Política de Privacidad | Lisboa Legal Group</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&family=Playfair+Display:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Reutilizamos las variables base */
+        :root {
+            --primary-blue: #05142a;
+            --dark-bg: #030a15;
+            --accent-gold: #d4af37;
+            --accent-gold-hover: #b5952f;
+            --text-dark: #1F2937;
+            --white: #FFFFFF;
+            --bg-light: #FAFAFA;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            margin: 0;
+            padding-top: 0;
+            background-color: var(--bg-light);
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-blue);
+        }
+
+        a {
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* HEADER */
+        header {
+            background-color: transparent;
+            box-shadow: none;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            position: absolute;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            height: 125px;
+            display: flex;
+            align-items: center;
+        }
+
+
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        /* Destacando el logo */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            height: 105px;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-img:hover {
+            transform: scale(1.05);
+        }
+
+        .btn-gold {
+            background-color: var(--accent-gold);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 4px;
+            font-weight: 700;
+            text-transform: uppercase;
+            border: none;
+            letter-spacing: 1px;
+            display: inline-block;
+        }
+
+        .btn-gold:hover {
+            background-color: var(--accent-gold-hover);
+            transform: translateY(-2px);
+        }
+
+        /* HERO AREA SECTION */
+        .area-hero {
+            background: linear-gradient(rgba(5, 20, 42, 0.8), rgba(5, 20, 42, 0.9)), url('https://images.unsplash.com/photo-1505664194779-8beaceb93744?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 120px 0 80px 0;
+            text-align: center;
+        }
+
+        .area-hero h1 {
+            color: var(--white);
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        /* CONTENT */
+        .content-section {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .legal-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .legal-content h2 {
+            font-size: 1.8rem;
+            margin: 40px 0 20px 0;
+            color: var(--primary-blue);
+        }
+
+        .legal-content p {
+            font-size: 1.05rem;
+            margin-bottom: 15px;
+            color: #444;
+            line-height: 1.8;
+        }
+
+        .legal-content ul {
+            margin-bottom: 25px;
+            padding-left: 20px;
+            color: #444;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .legal-content li {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: var(--primary-blue);
+            color: #fff;
+            padding: 40px 0;
+            text-align: center;
+            border-top: 3px solid var(--accent-gold);
+        }
+
+
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            font-weight: 700;
+            text-transform: none;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+            position: relative;
+            text-decoration: none;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent-gold);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-gold);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .lang-switch {
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: var(--white);
+            display: flex;
+            gap: 5px;
+            align-items: center;
+        }
+
+        .lang-switch a {
+            color: var(--white);
+            opacity: 0.6;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .lang-switch a.active,
+        .lang-switch a:hover {
+            color: var(--accent-gold);
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container navbar">
+            <!-- Logo principal fuertemente destacado -->
+            <a href="index.html" class="logo-container">
+                <img src="ChatGPT Image 26 ago 2025, 14_11_32.png" alt="Lisboa Legal Group Logo" class="logo-img">
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="index.html#servicios">Áreas de Práctica</a></li>
+                    <li><a href="index.html#equipo">Socios</a></li>
+                    <li><a href="index.html#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+            <div style="display: flex; align-items: center; gap: 20px; ">
+                <div class="lang-switch">
+                    <a href="#" class="active">ES</a> | <a href="#">EN</a>
+                </div>
+                <a href="index.html#contacto" class="btn btn-gold mobile-hidden">Consulta</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="area-hero">
+        <div class="container">
+            <h1>Política de Privacidad</h1>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="legal-content">
+                <h2>1. Introducción</h2>
+                <p>En Lisboa Legal Group, estamos comprometidos con la protección de la privacidad de nuestros usuarios
+                    y clientes. Esta política de tratamiento de datos personales describe cómo recopilamos, utilizamos,
+                    almacenamos, compartimos y protegemos la información personal que usted nos proporciona a través de
+                    nuestra página web.</p>
+
+                <h2>2. Información Recopilada</h2>
+                <p>Podemos recopilar diferentes tipos de información personal, incluyendo, pero no limitado a:</p>
+                <ul>
+                    <li><strong>Datos de identificación:</strong> nombre, dirección, número de teléfono, correo
+                        electrónico.</li>
+                    <li><strong>Información de contacto:</strong> dirección de correo electrónico, número de teléfono.
+                    </li>
+                    <li><strong>Datos de navegación:</strong> dirección IP, tipo de navegador, páginas visitadas, tiempo
+                        de permanencia en la web.</li>
+                    <li><strong>Información financiera:</strong> datos de tarjetas de crédito/débito, cuentas bancarias
+                        (en caso de que se realicen transacciones en línea).</li>
+                </ul>
+
+                <h2>3. Finalidades del Tratamiento de Datos</h2>
+                <p>La información personal recopilada será utilizada para los siguientes fines:</p>
+                <ul>
+                    <li>Procesar pedidos y realizar transacciones comerciales.</li>
+                    <li>Proveer información sobre productos y servicios.</li>
+                    <li>Enviar comunicaciones promocionales, siempre y cuando el usuario haya otorgado su
+                        consentimiento.</li>
+                    <li>Mejorar la experiencia del usuario en nuestra página web mediante análisis y estudios de
+                        navegación.</li>
+                    <li>Cumplir con obligaciones legales y reglamentarias.</li>
+                </ul>
+
+                <h2>4. Compartición de Datos</h2>
+                <p>No compartimos la información personal con terceros, salvo en los siguientes casos:</p>
+                <ul>
+                    <li><strong>Proveedores de servicios:</strong> Podemos compartir datos con terceros que nos
+                        proporcionan servicios esenciales, tales como procesamiento de pagos, envío de correos
+                        electrónicos o análisis de datos.</li>
+                    <li><strong>Obligaciones legales:</strong> Podremos compartir información personal si la ley lo
+                        requiere, o si es necesario para proteger nuestros derechos, propiedad o seguridad.</li>
+                </ul>
+
+                <h2>5. Seguridad de los Datos</h2>
+                <p>Implementamos medidas técnicas y organizativas adecuadas para proteger la información personal contra
+                    el acceso no autorizado, la alteración, divulgación o destrucción. Sin embargo, ningún sistema es
+                    completamente seguro y no podemos garantizar la seguridad absoluta de sus datos.</p>
+
+                <h2>6. Derechos del Usuario</h2>
+                <p>Usted tiene derecho a:</p>
+                <ul>
+                    <li>Acceder a sus datos personales que hemos recopilado.</li>
+                    <li>Solicitar la corrección de cualquier dato inexacto o incompleto.</li>
+                    <li>Solicitar la eliminación de sus datos personales, siempre y cuando no exista una obligación
+                        legal de conservarlos.</li>
+                    <li>Oponerse al tratamiento de sus datos personales para ciertos fines, como el envío de
+                        comunicaciones promocionales.</li>
+                </ul>
+
+                <h2>7. Cambios en la Política</h2>
+                <p>Nos reservamos el derecho de modificar esta política de tratamiento de datos personales en cualquier
+                    momento.</p>
+                <p>Cualquier cambio será publicado en esta página con la fecha de la última actualización.</p>
+
+                <h2>8. Contacto</h2>
+                <p>Si tiene alguna pregunta o desea ejercer sus derechos en relación con sus datos personales, puede
+                    contactarnos a través de:</p>
+                <p><strong>Correo electrónico:</strong><br>lisboalegalgroup@gmail.com</p>
+                <p><strong>Teléfono Guayaquil:</strong><br>+593 990967952</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Lisboa Legal Group. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+
+
+</body>
+
+</html>

@@ -1,5 +1,6 @@
 import os
 import glob
+import re
 
 def process_file(filepath):
     with open(filepath, 'r', encoding='utf-8') as f:
@@ -31,12 +32,13 @@ def process_file(filepath):
     # Update relative favicon paths to absolute to prevent 404s and SEO issues.
     content = content.replace('<link rel="icon" href="favicon.png"', '<link rel="icon" href="/favicon.png"')
 
-    idx = content.lower().find('</head>')
-    if idx != -1:
-        new_content = content[:idx] + seo_content + content[idx:]
-        with open(filepath, 'w', encoding='utf-8') as f:
-            f.write(new_content)
-        print(f"Updated {filepath}")
+    if not re.search(r'</head>', content, re.IGNORECASE):
+        return
+        
+    new_content = re.sub(r'(</head>)', rf'{seo_content}\1', content, count=1, flags=re.IGNORECASE)
+    with open(filepath, 'w', encoding='utf-8') as f:
+        f.write(new_content)
+    print(f"Updated {filepath}")
 
 def main():
     directory = r"c:\Users\ja_Ca\Desktop\lisboa legal group"

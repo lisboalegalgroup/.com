@@ -335,6 +335,86 @@
             display: none;
         }
         
+    
+        @media (max-width: 900px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text p {
+                margin: 0 auto 30px auto;
+            }
+
+            .menu-toggle {
+                display: block;
+                color: var(--white);
+                font-size: 1.8rem;
+                cursor: pointer;
+                transition: color 0.3s;
+                margin-left: auto;
+            }
+
+            .menu-toggle:hover {
+                color: var(--accent-gold);
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 100%; /* Just below the header */
+                left: 0;
+                width: 100%;
+                background-color: rgba(5, 20, 42, 0.98); /* Brand dark blue */
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+                padding: 30px 0;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+                
+                /* Hidden by default on mobile, but animatable */
+                max-height: 0;
+                overflow: hidden;
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.4s ease;
+            }
+            
+            .nav-links.active {
+                max-height: 400px;
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .nav-links li {
+                width: 100%;
+                text-align: center;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 10px;
+                font-size: 1.1rem;
+            }
+            
+            .lang-switch, .mobile-hidden {
+                 display: none !important; /* hide lang switch inside nav on mobile to keep it simple */
+            }
+            
+            .forms-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-image-wrapper {
+                max-width: 100%;
+                margin: 0 auto;
+                min-height: 350px;
+            }
+
+            .presence-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
     </style>
 
     <!-- SEO Site Name Configuration -->

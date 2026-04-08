@@ -371,6 +371,62 @@
             }
         }
 
+    
+        /* SUB-SERVICES GRID */
+        .sub-services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        .sub-service-card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 3px solid var(--accent-gold);
+            display: flex;
+            flex-direction: column;
+        }
+        .sub-service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        .sub-service-img-wrapper {
+            height: 180px;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            background-color: var(--primary-blue);
+        }
+        .sub-service-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        .sub-service-card:hover .sub-service-img {
+            transform: scale(1.05);
+        }
+        .sub-service-content {
+            padding: 25px;
+            flex-grow: 1;
+        }
+        .sub-service-content h4 {
+            color: var(--primary-blue);
+            font-size: 1.15rem;
+            margin-bottom: 12px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+        .sub-service-content p {
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
     </style>
 
     <!-- SEO Site Name Configuration -->
@@ -434,17 +490,47 @@
                     entidades reguladoras sectoriales y minimizar los impactos de auditorías de control.</p>
 
                 <h2>Nuestros Servicios Especializados</h2>
-                <ul class="feature-list">
-                    <li><i class="fas fa-check-circle"></i> <strong>Creación y Transformación de Compañías:</strong>
-                        Sociedades por Acciones Simplificadas (SAS), Cías Anónimas, Ltda y Sucursales Extranjeras.</li>
-                    <li><i class="fas fa-check-circle"></i> <strong>Fusiones, Escisiones y Adquisiciones:</strong>
-                        Manejo integral (M&A) resguardando y asesorando técnica, patrimonial y laboralmente.</li>
-                    <li><i class="fas fa-check-circle"></i> <strong>Resolución de Conflictos:</strong> Litigios entre
-                        socios, levantamientos de velo societario, impugnación de juntas y balances.</li>
-                    <li><i class="fas fa-check-circle"></i> <strong>Gobierno Corporativo:</strong> Acuerdos de
+                <div class="sub-services-grid">
+            <div class="sub-service-card" data-aos="fade-up" data-aos-delay="0">
+                <div class="sub-service-img-wrapper">
+                    <img loading="lazy" src="img_derecho-societario_1.webp" alt="Creación y Transformación de Compañías" class="sub-service-img" onerror="this.src='oficina-aerea.webp'">
+                </div>
+                <div class="sub-service-content">
+                    <h4>Creación y Transformación de Compañías</h4>
+                    <p>Sociedades por Acciones Simplificadas (SAS), Cías Anónimas, Ltda y Sucursales Extranjeras.</p>
+                </div>
+            </div>
+            <div class="sub-service-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="sub-service-img-wrapper">
+                    <img loading="lazy" src="img_derecho-societario_2.webp" alt="Fusiones, Escisiones y Adquisiciones" class="sub-service-img" onerror="this.src='oficina-aerea.webp'">
+                </div>
+                <div class="sub-service-content">
+                    <h4>Fusiones, Escisiones y Adquisiciones</h4>
+                    <p>Manejo integral (M&A) resguardando y asesorando técnica, patrimonial y laboralmente.</p>
+                </div>
+            </div>
+            <div class="sub-service-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="sub-service-img-wrapper">
+                    <img loading="lazy" src="img_derecho-societario_3.webp" alt="Resolución de Conflictos" class="sub-service-img" onerror="this.src='oficina-aerea.webp'">
+                </div>
+                <div class="sub-service-content">
+                    <h4>Resolución de Conflictos</h4>
+                    <p>Litigios entre
+                        socios, levantamientos de velo societario, impugnación de juntas y balances.</p>
+                </div>
+            </div>
+            <div class="sub-service-card" data-aos="fade-up" data-aos-delay="0">
+                <div class="sub-service-img-wrapper">
+                    <img loading="lazy" src="img_derecho-societario_4.webp" alt="Gobierno Corporativo" class="sub-service-img" onerror="this.src='oficina-aerea.webp'">
+                </div>
+                <div class="sub-service-content">
+                    <h4>Gobierno Corporativo</h4>
+                    <p>Acuerdos de
                         accionistas, actas de directorios y estatutos empresariales amoldados a normativa vigente y
-                        mejores prácticas corporativas.</li>
-                </ul>
+                        mejores prácticas corporativas.</p>
+                </div>
+            </div>
+        </div>
 
                 <div
                     style="margin-top: 50px; background: var(--primary-blue); color: white; padding: 40px; border-radius: 8px; text-align: center;">

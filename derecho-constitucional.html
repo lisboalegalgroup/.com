@@ -372,6 +372,62 @@
             }
         }
 
+    
+        /* SUB-SERVICES GRID */
+        .sub-services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        .sub-service-card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 3px solid var(--accent-gold);
+            display: flex;
+            flex-direction: column;
+        }
+        .sub-service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        .sub-service-img-wrapper {
+            height: 180px;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            background-color: var(--primary-blue);
+        }
+        .sub-service-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        .sub-service-card:hover .sub-service-img {
+            transform: scale(1.05);
+        }
+        .sub-service-content {
+            padding: 25px;
+            flex-grow: 1;
+        }
+        .sub-service-content h4 {
+            color: var(--primary-blue);
+            font-size: 1.15rem;
+            margin-bottom: 12px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+        .sub-service-content p {
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
     </style>
 
     <!-- SEO Site Name Configuration -->
@@ -433,17 +489,47 @@
                     abstracto.</p>
 
                 <h2>Nuestros Servicios Especializados</h2>
-                <ul class="feature-list">
-                    <li><i class="fas fa-check-circle"></i> <strong>Acciones de Protección:</strong> Representación
-                        eficaz para reparar derechos infringidos ya sea ante el Estado o particulares.</li>
-                    <li><i class="fas fa-check-circle"></i> <strong>Hábeas Corpus:</strong> Medidas urgentes para
-                        proteger la libertad e integridad personal.</li>
-                    <li><i class="fas fa-check-circle"></i> <strong>Acción Extraordinaria de Protección:</strong>
-                        Recurso ante sentencias definitivas que hayan vulnerado el debido proceso.</li>
-                    <li><i class="fas fa-check-circle"></i> <strong>Derecho de Petición y Hábeas Data:</strong>
-                        Garantizando el acceso y rectificación inminente a información de carácter público y bases de
-                        datos personales.</li>
-                </ul>
+                <div class="sub-services-grid">
+            <div class="sub-service-card" data-aos="fade-up" data-aos-delay="0">
+                <div class="sub-service-img-wrapper">
+                    <img loading="lazy" src="img_derecho-constitucional_1.webp" alt="Acciones de Protección" class="sub-service-img" onerror="this.src='oficina-aerea.webp'">
+                </div>
+                <div class="sub-service-content">
+                    <h4>Acciones de Protección</h4>
+                    <p>Representación
+                        eficaz para reparar derechos infringidos ya sea ante el Estado o particulares.</p>
+                </div>
+            </div>
+            <div class="sub-service-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="sub-service-img-wrapper">
+                    <img loading="lazy" src="img_derecho-constitucional_2.webp" alt="Hábeas Corpus" class="sub-service-img" onerror="this.src='oficina-aerea.webp'">
+                </div>
+                <div class="sub-service-content">
+                    <h4>Hábeas Corpus</h4>
+                    <p>Medidas urgentes para
+                        proteger la libertad e integridad personal.</p>
+                </div>
+            </div>
+            <div class="sub-service-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="sub-service-img-wrapper">
+                    <img loading="lazy" src="img_derecho-constitucional_3.webp" alt="Acción Extraordinaria de Protección" class="sub-service-img" onerror="this.src='oficina-aerea.webp'">
+                </div>
+                <div class="sub-service-content">
+                    <h4>Acción Extraordinaria de Protección</h4>
+                    <p>Recurso ante sentencias definitivas que hayan vulnerado el debido proceso.</p>
+                </div>
+            </div>
+            <div class="sub-service-card" data-aos="fade-up" data-aos-delay="0">
+                <div class="sub-service-img-wrapper">
+                    <img loading="lazy" src="img_derecho-constitucional_4.webp" alt="Derecho de Petición y Hábeas Data" class="sub-service-img" onerror="this.src='oficina-aerea.webp'">
+                </div>
+                <div class="sub-service-content">
+                    <h4>Derecho de Petición y Hábeas Data</h4>
+                    <p>Garantizando el acceso y rectificación inminente a información de carácter público y bases de
+                        datos personales.</p>
+                </div>
+            </div>
+        </div>
 
                 <div
                     style="margin-top: 50px; background: var(--primary-blue); color: white; padding: 40px; border-radius: 8px; text-align: center;">

@@ -377,6 +377,62 @@
             }
         }
 
+    
+        /* SUB-SERVICES GRID */
+        .sub-services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        .sub-service-card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 3px solid var(--accent-gold);
+            display: flex;
+            flex-direction: column;
+        }
+        .sub-service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        .sub-service-img-wrapper {
+            height: 180px;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            background-color: var(--primary-blue);
+        }
+        .sub-service-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        .sub-service-card:hover .sub-service-img {
+            transform: scale(1.05);
+        }
+        .sub-service-content {
+            padding: 25px;
+            flex-grow: 1;
+        }
+        .sub-service-content h4 {
+            color: var(--primary-blue);
+            font-size: 1.15rem;
+            margin-bottom: 12px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+        .sub-service-content p {
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
     </style>
 
     <!-- SEO Site Name Configuration -->
@@ -441,20 +497,59 @@
                     contundentes, respaldadas por un control de daños mediático y peritajes forenses excepcionales.</p>
 
                 <h2>Nuestros Servicios Especializados</h2>
-                <ul class="feature-list">
-                    <li><i class="fas fa-check-circle"></i> <strong>Delitos Económicos y Financieros:</strong> Defensa
-                        ante imputaciones de lavado de activos, peculado, fraudes corporativos, y estafa.</li>
-                    <li><i class="fas fa-check-circle"></i> <strong>Compliance Penal Empresarial:</strong> Asesoría
+                <div class="sub-services-grid">
+            <div class="sub-service-card" data-aos="fade-up" data-aos-delay="0">
+                <div class="sub-service-img-wrapper">
+                    <img loading="lazy" src="img_derecho-penal_1.webp" alt="Delitos Económicos y Financieros" class="sub-service-img" onerror="this.src='oficina-aerea.webp'">
+                </div>
+                <div class="sub-service-content">
+                    <h4>Delitos Económicos y Financieros</h4>
+                    <p>Defensa
+                        ante imputaciones de lavado de activos, peculado, fraudes corporativos, y estafa.</p>
+                </div>
+            </div>
+            <div class="sub-service-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="sub-service-img-wrapper">
+                    <img loading="lazy" src="img_derecho-penal_2.webp" alt="Compliance Penal Empresarial" class="sub-service-img" onerror="this.src='oficina-aerea.webp'">
+                </div>
+                <div class="sub-service-content">
+                    <h4>Compliance Penal Empresarial</h4>
+                    <p>Asesoría
                         preventiva para estructurar modelos de mitigación y exención de responsabilidad jurídica para
-                        personas jurídicas y directores.</li>
-                    <li><i class="fas fa-check-circle"></i> <strong>Cibercriminalidad y Tecnología:</strong> Patrocinio
-                        en delitos informáticos, robo de información confidencial y vulneración de bases de datos.</li>
-                    <li><i class="fas fa-check-circle"></i> <strong>Delitos contra la Administración Pública:</strong>
-                        Representación frente a acusaciones de cohecho, concusión y enriquecimiento ilícito.</li>
-                    <li><i class="fas fa-check-circle"></i> <strong>Litigación Oral Compleja:</strong> Representación en
+                        personas jurídicas y directores.</p>
+                </div>
+            </div>
+            <div class="sub-service-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="sub-service-img-wrapper">
+                    <img loading="lazy" src="img_derecho-penal_3.webp" alt="Cibercriminalidad y Tecnología" class="sub-service-img" onerror="this.src='oficina-aerea.webp'">
+                </div>
+                <div class="sub-service-content">
+                    <h4>Cibercriminalidad y Tecnología</h4>
+                    <p>Patrocinio
+                        en delitos informáticos, robo de información confidencial y vulneración de bases de datos.</p>
+                </div>
+            </div>
+            <div class="sub-service-card" data-aos="fade-up" data-aos-delay="0">
+                <div class="sub-service-img-wrapper">
+                    <img loading="lazy" src="img_derecho-penal_4.webp" alt="Delitos contra la Administración Pública" class="sub-service-img" onerror="this.src='oficina-aerea.webp'">
+                </div>
+                <div class="sub-service-content">
+                    <h4>Delitos contra la Administración Pública</h4>
+                    <p>Representación frente a acusaciones de cohecho, concusión y enriquecimiento ilícito.</p>
+                </div>
+            </div>
+            <div class="sub-service-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="sub-service-img-wrapper">
+                    <img loading="lazy" src="img_derecho-penal_5.webp" alt="Litigación Oral Compleja" class="sub-service-img" onerror="this.src='oficina-aerea.webp'">
+                </div>
+                <div class="sub-service-content">
+                    <h4>Litigación Oral Compleja</h4>
+                    <p>Representación en
                         impugnaciones ante cortes provinciales, y recursos de casación y revisión ante la Corte Nacional
-                        de Justicia.</li>
-                </ul>
+                        de Justicia.</p>
+                </div>
+            </div>
+        </div>
 
                 <div
                     style="margin-top: 50px; background: var(--primary-blue); color: white; padding: 40px; border-radius: 8px; text-align: center;">

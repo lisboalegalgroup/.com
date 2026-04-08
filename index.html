@@ -576,17 +576,16 @@
         }
 
         .member-img {
-            width: 220px;
-            height: 220px;
-            border-radius: 50%;
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            border-radius: 0;
             object-fit: cover;
             margin-bottom: 20px;
-            border: 4px solid var(--accent-gold);
-            transition: transform 0.3s;
+            transition: transform 0.4s ease, filter 0.4s ease;
         }
 
-        .team-member:hover .member-img {
-            transform: scale(1.05);
+        .team-member:hover .member-img, .team-card:hover .member-img {
+            transform: scale(1.03);
         }
 
         .forms-wrapper {
@@ -777,7 +776,7 @@
             color: white;
             width: 65px;
             height: 65px;
-            border-radius: 50%;
+            border-radius: 0;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1362,7 +1361,7 @@
                     onmouseout="this.style.transform='translateY(0)';">
                     <div style="text-decoration: none;">
                         <img loading="lazy" src="daniel-espinoza-profile.webp" alt="Daniel Espinoza" class="member-img"
-                            style="width: 160px; height: 160px; border-radius: 50%; object-fit: cover; border: 3px solid var(--accent-gold); margin-bottom: 20px;">
+                            style="   object-fit: cover;  margin-bottom: 20px;">
                     </div>
                     <p
                         style="color: var(--accent-gold); font-weight: 700; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px;">
@@ -1376,7 +1375,7 @@
                     <div style="text-decoration: none;">
                         <img loading="lazy" src="Gemini_Generated_Image_aqaxahaqaxahaqax-removebg-preview.webp" alt="Karol Carvajal"
                             class="member-img"
-                            style="width: 160px; height: 160px; border-radius: 50%; object-fit: cover; border: 3px solid var(--accent-gold); margin-bottom: 20px; background-color: var(--bg-light);">
+                            style="   object-fit: cover;  margin-bottom: 20px; background-color: var(--bg-light);">
                     </div>
                     <p
                         style="color: var(--accent-gold); font-weight: 700; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px;">

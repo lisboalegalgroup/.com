@@ -774,10 +774,35 @@
             color: var(--primary-blue);
         }
 
-        .whatsapp-float {
+        .whatsapp-wrapper {
             position: fixed;
             bottom: 30px;
             right: 30px;
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .whatsapp-label {
+            background: white;
+            color: #333;
+            padding: 8px 14px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            font-size: 0.8rem;
+            font-weight: 600;
+            line-height: 1.3;
+            white-space: nowrap;
+        }
+
+        .whatsapp-label span {
+            display: block;
+            color: #25d366;
+            font-weight: 700;
+        }
+
+        .whatsapp-float {
             background-color: #25d366;
             color: white;
             width: 50px;
@@ -788,7 +813,6 @@
             justify-content: center;
             font-size: 26px;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            z-index: 2000;
             transition: transform 0.3s, background-color 0.3s;
         }
 
@@ -1367,10 +1391,12 @@
                 correspondiente.</p>
         </div>
     </div>
-    <a href="https://wa.me/593990967952" target="_blank" class="whatsapp-float">
-        <i class="fab fa-whatsapp">
-        </i>
-    </a>
+    <div class="whatsapp-wrapper">
+        <div class="whatsapp-label">¿Necesitas ayuda?<span>Escríbenos</span></div>
+        <a href="https://wa.me/593990967952" target="_blank" class="whatsapp-float">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
     <script> // Funciones de modales
 
         function openModal(id) {

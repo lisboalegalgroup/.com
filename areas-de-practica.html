@@ -339,7 +339,7 @@
 
         .service-card {
             position: relative;
-            border-radius: 12px;
+            border-radius: 8px;
             overflow: hidden;
             height: 380px;
             /* Altura ideal para la descripción */
@@ -578,6 +578,7 @@
             aspect-ratio: 1 / 1;
             border-radius: 0;
             object-fit: cover;
+            border: 2px solid rgba(212, 175, 55, 0.3);
             transition: transform 0.4s ease, filter 0.4s ease;
         }
 
@@ -589,6 +590,7 @@
             aspect-ratio: 1 / 1;
             border-radius: 0;
             object-fit: cover;
+            border: 2px solid rgba(212, 175, 55, 0.3);
             transition: transform 0.4s ease, filter 0.4s ease;
         }
 
@@ -599,11 +601,12 @@
         }
 
         .form-box {
-            background: var(--white);
+            background: rgba(255, 255, 255, 0.05);
             padding: 45px;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            border-top: 4px solid var(--primary-blue);
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border-top: 3px solid var(--accent-gold);
+            color: var(--white);
         }
 
         .form-group {
@@ -903,8 +906,9 @@
 
         /* --- POR QUÉ ELEGIRNOS --- */
         .why-choose-us {
-            background-color: #F8F9FA;
+            background-color: var(--primary-blue);
             text-align: center;
+            color: var(--white);
         }
 
         .why-header {
@@ -933,7 +937,7 @@
         }
 
         .why-title {
-            color: var(--primary-blue);
+            color: var(--white);
             font-size: 2.8rem;
             font-weight: 800;
             margin-bottom: 20px;
@@ -949,16 +953,16 @@
         }
 
         .why-card {
-            padding: 10px;
-            background: var(--white);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(212, 175, 55, 0.15);
             border-radius: 8px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
             padding: 40px;
-            transition: transform 0.3s;
+            transition: transform 0.3s, border-color 0.3s;
         }
 
         .why-card:hover {
             transform: translateY(-5px);
+            border-color: var(--accent-gold);
         }
 
         .why-icon {
@@ -968,14 +972,14 @@
         }
 
         .why-card h3 {
-            color: var(--text-dark);
+            color: var(--white);
             font-size: 1.35rem;
             margin-bottom: 15px;
             font-weight: 700;
         }
 
         .why-card p {
-            color: #555;
+            color: rgba(255, 255, 255, 0.75);
             line-height: 1.7;
             font-size: 1.05rem;
         }

@@ -1064,7 +1064,9 @@
     
         /* --- SUBPAGE SPECIFIC STYLES --- */
         .area-hero {
-            background-color: var(--primary-blue);
+            background: linear-gradient(rgba(5, 20, 42, 0.85), rgba(5, 20, 42, 0.85)), url('oficina-aerea.webp');
+            background-size: cover;
+            background-position: center;
             color: var(--white);
             padding: 160px 0 60px 0;
             text-align: center;
@@ -1084,8 +1086,8 @@
         }
 
         .content-section {
-            background-color: var(--primary-blue);
-            color: rgba(255, 255, 255, 0.85);
+            background-color: var(--white);
+            color: var(--text-dark);
             padding: 80px 0;
         }
 
@@ -1097,7 +1099,7 @@
         }
 
         .main-text h2 {
-            color: var(--white);
+            color: var(--primary-blue);
             font-size: 1.8rem;
             margin-bottom: 20px;
             margin-top: 30px;
@@ -1108,14 +1110,14 @@
         }
 
         .main-text p {
-            color: rgba(255, 255, 255, 0.8);
+            color: #444;
             line-height: 1.8;
             margin-bottom: 15px;
             font-size: 1rem;
         }
 
         .main-text strong {
-            color: var(--accent-gold);
+            color: var(--primary-blue);
         }
 
         /* Sub-services grid */
@@ -1127,17 +1129,18 @@
         }
 
         .sub-service-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(212, 175, 55, 0.15);
+            background: var(--white);
+            border: 1px solid #e0e0e0;
             border-radius: 8px;
             overflow: hidden;
-            transition: transform 0.3s, border-color 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s;
             text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
         }
 
         .sub-service-card:hover {
             transform: translateY(-5px);
-            border-color: var(--accent-gold);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
         }
 
         .sub-service-img-wrapper {
@@ -1162,7 +1165,7 @@
         }
 
         .sub-service-content h4 {
-            color: var(--white);
+            color: var(--primary-blue);
             font-size: 1.05rem;
             margin-bottom: 8px;
             font-family: 'Montserrat', sans-serif;
@@ -1170,7 +1173,7 @@
         }
 
         .sub-service-content p {
-            color: rgba(255, 255, 255, 0.7);
+            color: #555;
             font-size: 0.9rem;
             line-height: 1.5;
         }
@@ -1182,7 +1185,7 @@
         }
 
         .sidebar h3 {
-            color: var(--accent-gold);
+            color: var(--primary-blue);
             font-size: 1.3rem;
             margin-bottom: 20px;
             padding-bottom: 10px;
@@ -1201,7 +1204,7 @@
         .services-menu a {
             display: block;
             padding: 12px 15px;
-            color: rgba(255, 255, 255, 0.7);
+            color: #444;
             border-radius: 6px;
             transition: all 0.3s;
             font-weight: 500;
@@ -1224,8 +1227,8 @@
 
         .feature-list li {
             padding: 12px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.8);
+            border-bottom: 1px solid #e0e0e0;
+            color: #444;
             display: flex;
             align-items: center;
             gap: 10px;

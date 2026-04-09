@@ -85,17 +85,19 @@
             cursor: pointer;
             border: none;
             letter-spacing: 1px;
+            transition: all 0.4s ease;
         }
 
         .btn-gold {
             background-color: var(--accent-gold);
             color: var(--white);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
         }
 
         .btn-gold:hover {
             background-color: var(--accent-gold-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(197, 160, 89, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.6);
         }
 
         .section-padding {
@@ -123,8 +125,8 @@
         header {
             background-color: transparent;
             box-shadow: none;
-            transition: background-color 0.3s ease, box-shadow 0.3s ease;
-            position: absolute;
+            transition: background-color 0.4s ease, box-shadow 0.4s ease, height 0.4s ease;
+            position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
@@ -133,7 +135,17 @@
             align-items: center;
         }
 
+        header.scrolled {
+            background-color: rgba(5, 20, 42, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            height: 90px;
+        }
 
+        header.scrolled .logo-img {
+            height: 70px;
+        }
 
         .navbar {
             display: flex;
@@ -157,15 +169,6 @@
 
         .logo-img:hover {
             transform: scale(1.05);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 25px;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            align-items: center;
         }
 
         .nav-links {
@@ -281,12 +284,13 @@
         /* Logo destacado en el hero opcional */
         .hero-logo-large {
             max-width: 250px;
-            margin: 0 0 15px 0;
+            margin: 0 auto 15px auto;
             display: block;
             filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.2));
         }
 
         .hero-text h1 {
+            text-align: center;
             color: var(--white);
             font-size: 4rem;
             line-height: 1.1;
@@ -298,6 +302,7 @@
         }
 
         .hero-text p {
+            text-align: center;
             font-size: 1.2rem;
             margin: 0 auto 15px auto;
             opacity: 0.9;
@@ -327,8 +332,8 @@
         /* --- SERVICIOS CON DISEÑO TIPO TARJETA / CUADRO --- */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
         }
 
         .service-link {
@@ -341,7 +346,7 @@
             position: relative;
             border-radius: 8px;
             overflow: hidden;
-            height: 380px;
+            height: 280px;
             /* Altura ideal para la descripción */
             background-size: cover;
             background-position: center;
@@ -378,7 +383,7 @@
         .service-content {
             position: relative;
             z-index: 2;
-            padding: 40px 35px;
+            padding: 25px 20px;
             color: var(--white);
             display: flex;
             flex-direction: column;
@@ -388,8 +393,8 @@
         }
 
         .service-content i {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
+            font-size: 1.4rem;
+            margin-bottom: 10px;
             color: var(--white);
             transition: transform 0.3s ease, color 0.3s ease;
         }
@@ -400,7 +405,7 @@
         }
 
         .service-content h3 {
-            font-size: 1.5rem;
+            font-size: 1.1rem;
             color: var(--white);
             margin-bottom: 15px;
             font-family: 'Montserrat', sans-serif;
@@ -410,7 +415,7 @@
         }
 
         .service-content p {
-            font-size: 0.95rem;
+            font-size: 0.85rem;
             line-height: 1.6;
             color: rgba(255, 255, 255, 0.9);
             font-weight: 300;
@@ -429,6 +434,8 @@
             border-top: 2px solid var(--accent-gold);
             background-image: linear-gradient(rgba(5, 20, 42, 0.96), rgba(5, 20, 42, 0.96)), url('patron.webp');
             background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
         }
 
         .presence-container {
@@ -840,8 +847,7 @@
                 font-size: 1.8rem;
                 cursor: pointer;
                 transition: color 0.3s;
-               margin-left: auto;
-             margin-left: auto;
+            margin-left: auto;
             }
 
             .menu-toggle:hover {
@@ -944,6 +950,55 @@
             line-height: 1.2;
         }
 
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            align-items: stretch;
+        }
+
+        .blog-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .blog-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .blog-content {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .blog-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .blog-content p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            flex-grow: 1;
+        }
+
         .why-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -1006,17 +1061,7 @@
             }
         }
 
-        /* --- ANIMACIONES REVEAL (Scroll) --- */
-        .reveal {
-            opacity: 0;
-            transform: translateY(40px);
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
+        
     </style>
 
     <!-- SEO Site Name Configuration -->

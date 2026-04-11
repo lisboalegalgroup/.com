@@ -1255,7 +1255,24 @@
                 font-size: 2rem;
             }
         }
-    </style>
+    
+        /* --- ANIMACIÓN DE REBOTE PARA ICONOS (ANTIGRAVITY) --- */
+        @keyframes icon-bounce {
+            0%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        i:hover, 
+        a:hover i, 
+        .btn:hover i, 
+        .service-card:hover i,
+        .sub-service-card:hover i,
+        .whatsapp-float:hover i {
+            animation: icon-bounce 0.5s ease-in-out;
+            display: inline-block;
+        }
+</style>
 
     <!-- SEO Site Name Configuration -->
     <meta property="og:site_name" content="Lisboa Legal Group">

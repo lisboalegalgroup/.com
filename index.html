@@ -1862,6 +1862,83 @@
             });
         });
     </script>
+
+    <!-- 3D Effects Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // 1. Tilt 3D en las Tarjetas de Servicios
+            VanillaTilt.init(document.querySelectorAll(".service-card"), {
+                max: 12,
+                speed: 400,
+                glare: true,
+                "max-glare": 0.2,
+                perspective: 1000,
+                scale: 1.02
+            });
+
+            // 2. Parallax de Movimiento 3D en el Hero
+            const heroSection = document.querySelector('.hero');
+            const heroText = document.querySelector('.hero-text');
+            const heroImg = document.querySelector('.hero-image-wrapper');
+            
+            if (heroSection) {
+                heroSection.style.perspective = "1200px";
+                if (heroText) heroText.style.transformStyle = "preserve-3d";
+                if (heroImg) heroImg.style.transformStyle = "preserve-3d";
+
+                heroSection.addEventListener('mousemove', (e) => {
+                    const x = (e.clientX / window.innerWidth - 0.5) * 2;
+                    const y = (e.clientY / window.innerHeight - 0.5) * 2;
+                    
+                    if(heroText) {
+                        heroText.style.transform = `translateZ(60px) rotateX(${-y * 6}deg) rotateY(${x * 6}deg)`;
+                    }
+                    if(heroImg) {
+                        heroImg.style.transform = `translateZ(30px) rotateX(${-y * 3}deg) rotateY(${x * 3}deg)`;
+                    }
+                });
+
+                heroSection.addEventListener('mouseleave', () => {
+                    if(heroText) {
+                        heroText.style.transition = 'transform 0.6s cubic-bezier(0.23, 1, 0.32, 1)';
+                        heroText.style.transform = `translateZ(0) rotateX(0deg) rotateY(0deg)`;
+                    }
+                    if(heroImg) {
+                        heroImg.style.transition = 'transform 0.6s cubic-bezier(0.23, 1, 0.32, 1)';
+                        heroImg.style.transform = `translateZ(0) rotateX(0deg) rotateY(0deg)`;
+                    }
+                    
+                    setTimeout(() => {
+                        if(heroText) heroText.style.transition = 'none';
+                        if(heroImg) heroImg.style.transition = 'none';
+                    }, 600);
+                });
+            }
+
+            // 3. Profundidad Dinámica (Z-Layering) en el Scroll
+            const parallaxElements = document.querySelectorAll('.culture-card, .blog-card, .form-box');
+            const containers = document.querySelectorAll('.services-grid, .blog-grid, .forms-wrapper, .culture-grid');
+            containers.forEach(c => c.style.perspective = '1200px');
+            
+            window.addEventListener('scroll', () => {
+                const scrolled = window.scrollY;
+                
+                parallaxElements.forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    if(rect.top < window.innerHeight && rect.bottom > 0) {
+                        const distanceFromCenter = (window.innerHeight / 2) - (rect.top + rect.height / 2);
+                        const zOffset = Math.max(0, 40 - Math.abs(distanceFromCenter) * 0.08);
+                        const yOffset = distanceFromCenter * -0.05;
+                        
+                        if (!el.matches(':hover')) {
+                           el.style.transform = `translateY(${yOffset}px) translateZ(${zOffset}px)`;
+                        }
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

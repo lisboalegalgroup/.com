@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lisboalegalgroup.github.io/legal/sitemap.xml

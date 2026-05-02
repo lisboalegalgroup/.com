@@ -14,7 +14,7 @@ def process_file(filepath):
     <meta property="og:site_name" content="Lisboa Legal Group">
     <meta property="og:title" content="Lisboa Legal Group | Abogados en Guayaquil, Ecuador">
     <meta property="og:description" content="Estudio Jurídico en Guayaquil con experiencia en derecho penal, civil, corporativo y más. Lisboa Legal Group, excelencia y compromiso con su caso.">
-    <meta property="og:image" content="https://lisboalegalgroup.github.io/legal/logo-full.png">
+    <meta property="og:image" content="https://lisboalegalgroup.github.io/legal/daniel-espinoza-profile.jpg">
     <meta property="og:url" content="https://lisboalegalgroup.github.io/legal/">
     <meta property="og:type" content="website">"""
         content = re.sub(

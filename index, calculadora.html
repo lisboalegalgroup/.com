@@ -525,9 +525,12 @@
 
             </div>
             
-            <div style="text-align: center;">
-                <button class="btn-primary" onclick="calculate()">
+            <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                <button class="btn-primary" onclick="calculate()" style="margin-top: 0;">
                     Calcular Liquidación
+                </button>
+                <button class="btn-primary" onclick="limpiarFormulario()" style="margin-top: 0; background-color: #e5e7eb; color: #374151; border: 1px solid #d1d5db; box-shadow: none;">
+                    Limpiar
                 </button>
             </div>
 
@@ -923,6 +926,35 @@
             // Total
             const granTotal = totalHaberes + totalIndemnizaciones;
             document.getElementById('total_recibir').innerText = formatMoneda(granTotal);
+        }
+        function limpiarFormulario() {
+            // Restaurar valores por defecto
+            document.getElementById('region').value = 'costa';
+            document.getElementById('causal').value = 'despido';
+            document.getElementById('fecha_ingreso').value = '';
+            document.getElementById('fecha_salida').value = '';
+            document.getElementById('tiempo_trabajado_texto').innerText = 'Ingresa las fechas para calcular el tiempo de servicio.';
+            document.getElementById('sueldo').value = '460';
+            document.getElementById('dias_adeudados').value = '0';
+            document.getElementById('vacaciones_pendientes').value = '0';
+            document.getElementById('horas_extras').value = '0';
+            
+            // Toggles
+            setDecimos('mensual');
+            setFondos('iess');
+            
+            // Checkboxes
+            document.getElementById('chk_embarazo').checked = false;
+            document.getElementById('chk_discapacidad').checked = false;
+            document.getElementById('chk_sindical').checked = false;
+
+            // Mostrar estado vacío
+            document.getElementById('results_content').style.display = 'none';
+            document.getElementById('empty_state').style.display = 'block';
+            
+            // Volver arriba
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            document.querySelector('.results-panel').scrollTop = 0;
         }
     </script>
 </body>

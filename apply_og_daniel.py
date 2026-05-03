@@ -36,14 +36,14 @@ for filepath in glob.glob(os.path.join(directory, '*.html')):
     <!-- Open Graph Tags -->
     <meta property="og:title" content="{title}">
     <meta property="og:description" content="{description}">
-    <meta property="og:image" content="https://lisboalegalgroup.github.io/legal/daniel-espinoza-profile.jpg">
+    <meta property="og:image" content="https://lisboalegalgroup.github.io/legal/Abg.%20Daniel.webp">
     <meta property="og:url" content="{url}">
     <meta property="og:type" content="website">
 """
 
     if 'og:image' in content:
         # replace existing og:image
-        content = re.sub(r'<meta property="og:image" content="[^"]*">', r'<meta property="og:image" content="https://lisboalegalgroup.github.io/legal/daniel-espinoza-profile.jpg">', content)
+        content = re.sub(r'<meta property="og:image" content="[^"]*">', r'<meta property="og:image" content="https://lisboalegalgroup.github.io/legal/Abg.%20Daniel.webp">', content)
     else:
         content = re.sub(r'(</head>)', f'{og_tags}\\n\\1', content, count=1, flags=re.IGNORECASE)
         

@@ -1068,9 +1068,11 @@
     
         /* --- SUBPAGE SPECIFIC STYLES --- */
         .area-hero {
-            background: linear-gradient(rgba(5, 20, 42, 0.85), rgba(5, 20, 42, 0.85)), url('img_derecho-laboral_2.webp');
-            background-size: cover;
-            background-position: center;
+            background-color: var(--primary-blue);
+            background-image: linear-gradient(rgba(5, 20, 42, 0.85), rgba(5, 20, 42, 0.85)), url('img_derecho-laboral_2.webp');
+            background-size: cover, contain;
+            background-position: center, center;
+            background-repeat: no-repeat, no-repeat;
             color: var(--white);
             padding: 160px 0 60px 0;
             text-align: center;

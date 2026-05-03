@@ -1326,42 +1326,20 @@
         </div>
     </header>
 
-    <section class="area-hero">
-        <div class="container">
-            <h1>Calculadora Laboral Automática</h1>
-            <p>Herramienta digital para calcular liquidaciones, indemnizaciones y beneficios sociales de manera rápida y precisa.</p>
-        </div>
-    </section>
+    <style>
+        /* Force dark header since there is no hero image anymore */
+        header {
+            background-color: var(--primary-blue) !important;
+            height: 90px !important; /* Force scrolled height for a tighter fit */
+        }
+        body {
+            overflow: hidden; /* Prevent page scrolling entirely */
+        }
+    </style>
 
-    <section class="content-section">
-        <div class="container grid-content">
-            <div class="main-text">
-                <iframe src="index, calculadora.html" style="width: 100%; min-height: 1200px; border: none; border-radius: 12px; background: #f4f7fb; box-shadow: 0 4px 20px rgba(0,0,0,0.05);"></iframe>
-            </div>
-
-            <aside class="sidebar">
-                <h3>Otras Áreas de Práctica</h3>
-                <ul class="services-menu">
-                    <li><a href="derecho-penal.html">Derecho Penal</a></li>
-                    <li><a href="derecho-civil.html">Derecho Civil</a></li>
-                    <li><a href="derecho-de-familia.html">Derecho de Familia</a></li>
-                    <li><a href="derecho-constitucional.html">Derecho Constitucional</a></li>
-                    <li><a href="derecho-administrativo.html">Derecho Administrativo</a></li>
-                    <li><a href="compliance.html">Compliance</a></li>
-                    <li><a href="herencias-y-sucesiones.html">Sucesiones</a></li>
-                    <li><a href="derecho-laboral.html">Derecho Laboral</a></li>
-                    <li><a href="derecho-societario.html">Derecho Societario</a></li>
-                    <li><a href="calculadora-laboral.html" class="active">Calculadora Laboral</a></li>
-                </ul>
-            </aside>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Lisboa Legal Group. | <a href="privacidad.html" style="color: #ccc; text-decoration: underline; margin-left:10px; font-size: 0.9rem;">PolÃ­ticas de Privacidad</a></p>
-        </div>
-    </footer>
+    <div style="padding-top: 90px; height: 100vh; width: 100vw; display: flex; flex-direction: column; background: #f4f7fb;">
+        <iframe src="index, calculadora.html" style="flex-grow: 1; width: 100%; border: none;"></iframe>
+    </div>
 
 
 

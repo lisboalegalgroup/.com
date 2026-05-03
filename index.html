@@ -61,12 +61,14 @@
             box-sizing: border-box;
         }
 
-        body {
+        html, body {
             font-family: 'Golos Text', sans-serif;
             color: var(--text-dark);
             line-height: 1.6;
             padding-top: 0;
             overflow-x: hidden;
+            width: 100%;
+            max-width: 100vw;
         }
 
         h1,
@@ -855,6 +857,14 @@
                 text-align: left;
             }
 
+            .hero-text h1 {
+                font-size: 2.8rem;
+            }
+
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+
             .hero-text p {
                 margin: 0 auto 30px auto;
             }
@@ -1062,6 +1072,12 @@
         }
 
         @media (max-width: 768px) {
+            .hero-text h1 {
+                font-size: 2.4rem;
+            }
+            .section-title h2 {
+                font-size: 2rem;
+            }
 
             .why-grid,
             .team-grid {

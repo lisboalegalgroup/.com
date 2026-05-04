@@ -373,7 +373,7 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            transition: transform 0.8s ease, box-shadow 0.8s ease;
+            transition: all 0.8s ease;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
         }
 
@@ -387,7 +387,7 @@
             bottom: 0;
             background: var(--overlay-color);
             z-index: 1;
-            transition: background 0.8s ease;
+            transition: all 0.8s ease;
         }
 
         .service-link:hover .service-card {
@@ -415,7 +415,7 @@
             font-size: 1.4rem;
             margin-bottom: 10px;
             color: var(--white);
-            transition: transform 0.8s ease, color 0.8s ease;
+            transition: all 0.8s ease;
         }
 
         .service-link:hover .service-content i {
@@ -605,20 +605,13 @@
             border-radius: 0;
             object-fit: cover;
             border: 2px solid rgba(212, 175, 55, 0.3);
-            transition: transform 0.8s ease, filter 0.8s ease;
+            transition: all 0.8s ease;
         }
 
         .team-member:hover .member-img,
         .team-card:hover .member-img {
-            width: 100%;
-            max-width: 240px;
-            margin: 0 auto 15px auto;
-            display: block;
-            aspect-ratio: auto;
-            border-radius: 0;
-            object-fit: cover;
-            border: 2px solid rgba(212, 175, 55, 0.3);
-            transition: transform 0.8s ease, filter 0.8s ease;
+            transform: scale(1.05);
+            filter: brightness(1.1);
         }
 
         .forms-wrapper {
@@ -1471,26 +1464,22 @@
             <div class="team-grid"
                 style="grid-template-columns: repeat(2, 1fr); max-width: 1000px; margin: 0 auto; gap: 50px;">
                 <!-- Socio 1 -->
-                <div class="team-card" data-aos="flip-up" style="text-align: center; transition: 0.3s;"
+                <div class="team-card" data-aos="flip-up" style="text-align: center; transition: 0.8s;"
                     onmouseover="this.style.transform='translateY(-5px)';"
                     onmouseout="this.style.transform='translateY(0)';">
-                    <a href="daniel-espinoza.html" style="text-decoration: none;">
                         <img loading="lazy" src="Abg. Daniel.webp" alt="Daniel Espinoza" class="member-img"
                             style="   object-fit: cover; object-position: top; margin-bottom: 20px;">
-                    </a>
                     <p
                         style="color: var(--accent-gold); font-weight: 700; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px;">
                         Socio</p>
                 </div>
                 <!-- Socio 2 -->
-                <div class="team-card" data-aos="flip-up" style="text-align: center; transition: 0.3s;"
+                <div class="team-card" data-aos="flip-up" style="text-align: center; transition: 0.8s;"
                     onmouseover="this.style.transform='translateY(-5px)';"
                     onmouseout="this.style.transform='translateY(0)';">
-                    <a href="karol-carvajal.html" style="text-decoration: none;">
                         <img loading="lazy" src="Abg. karol 2.webp"
                             alt="Karol Carvajal" class="member-img"
                             style="   object-fit: cover; object-position: top; margin-bottom: 20px; background-color: var(--bg-light);">
-                    </a>
                     <p
                         style="color: var(--accent-gold); font-weight: 700; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px;">
                         Socia Senior</p>

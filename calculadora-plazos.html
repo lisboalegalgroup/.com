@@ -12,7 +12,7 @@
     <link rel="apple-touch-icon" href="https://lisboalegalgroup.github.io/legal/apple-touch-icon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Calculadora de Términos y Plazos Procesales de Ecuador. Calcule fechas exactas según COGEP, COIP y Código de Trabajo.">
+    <meta name="description" content="Calculadora de Términos y Plazos Procesales de Ecuador. Calcule fechas exactas según COGEP, COIP, CT, COA y LOGJCC.">
     <title>Calculadora de Plazos Procesales | Lisboa Legal Group</title>
     <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -201,8 +201,14 @@
 
         .calc-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1.2fr 1fr;
             gap: 40px;
+        }
+
+        @media (max-width: 1100px) {
+            .calc-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         .calc-panel {
@@ -211,6 +217,69 @@
             padding: 40px;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
             border-top: 4px solid var(--accent-gold);
+        }
+
+        /* --- MATERIA CARDS --- */
+        .materia-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .materia-card {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            border: 2px solid transparent;
+            border-radius: 12px;
+            padding: 20px 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .materia-card i {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: var(--accent-gold);
+        }
+
+        .materia-card h4 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+            line-height: 1.2;
+        }
+
+        .materia-card span {
+            font-size: 0.75rem;
+            opacity: 0.7;
+        }
+
+        .materia-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(5, 20, 42, 0.2);
+            border-color: rgba(212, 175, 55, 0.5);
+        }
+
+        .materia-card.active {
+            background-color: var(--white);
+            color: var(--primary-blue);
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 0 2px var(--accent-gold);
+        }
+        
+        .materia-card.active i {
+            color: var(--primary-blue);
+        }
+
+        .materia-card.active span {
+            color: var(--primary-blue);
+            opacity: 0.8;
         }
 
         .form-group {
@@ -298,7 +367,7 @@
         }
 
         .result-date-value {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             font-weight: 900;
             color: var(--white);
             line-height: 1.2;
@@ -359,11 +428,27 @@
             color: #f8d7da;
             line-height: 1.5;
         }
+        
+        .exception-box {
+            margin-top: 15px;
+            background: rgba(212, 175, 55, 0.15);
+            border-left: 4px solid var(--accent-gold);
+            padding: 15px;
+            border-radius: 4px;
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+        }
 
-        @media (max-width: 992px) {
-            .calc-grid {
-                grid-template-columns: 1fr;
-            }
+        .exception-box i {
+            color: var(--accent-gold);
+            margin-top: 3px;
+        }
+
+        .exception-box p {
+            font-size: 0.9rem;
+            color: #fff;
+            line-height: 1.5;
         }
 
         /* --- FOOTER (SIMPLIFICADO) --- */
@@ -410,8 +495,8 @@
     <section class="calc-hero">
         <div class="container" data-aos="fade-up">
             <h1>Calculadora de <span>Plazos y Términos</span></h1>
-            <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto; opacity: 0.9;">
-                Calcule automáticamente la fecha límite para actuaciones procesales en Ecuador según el COGEP, COIP y Código del Trabajo.
+            <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto; opacity: 0.9;">
+                Calcule automáticamente la fecha límite para actuaciones procesales en Ecuador. Todos los plazos en días hábiles salvo indicación contraria.
             </p>
         </div>
     </section>
@@ -424,24 +509,28 @@
                 <div class="calc-panel" data-aos="fade-right">
                     <form id="plazos-form">
                         <div class="form-group">
-                            <label for="materia"><i class="fas fa-balance-scale"></i> Materia Legal</label>
-                            <select id="materia" class="form-control" required>
-                                <option value="" disabled selected>Seleccione la materia</option>
-                                <option value="civil">Civil y Otros (COGEP)</option>
-                                <option value="penal">Penal (COIP)</option>
-                                <option value="laboral">Laboral (CT / COGEP)</option>
+                            <label><i class="fas fa-balance-scale"></i> Seleccione la Materia Legal</label>
+                            <div class="materia-grid" id="materia-grid">
+                                <!-- Tarjetas generadas dinámicamente -->
+                            </div>
+                        </div>
+
+                        <div class="form-group" id="procedimiento-group" style="display: none;">
+                            <label for="procedimiento"><i class="fas fa-folder-open"></i> Procedimiento</label>
+                            <select id="procedimiento" class="form-control" required>
+                                <option value="" disabled selected>Seleccione el procedimiento</option>
                             </select>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group" id="actuacion-group" style="display: none;">
                             <label for="actuacion"><i class="fas fa-file-signature"></i> Actuación Procesal</label>
-                            <select id="actuacion" class="form-control" required disabled>
-                                <option value="" disabled selected>Primero seleccione la materia</option>
+                            <select id="actuacion" class="form-control" required>
+                                <option value="" disabled selected>Seleccione la actuación</option>
                             </select>
                         </div>
 
                         <div class="form-group">
-                            <label for="fecha_notificacion"><i class="fas fa-calendar-day"></i> Fecha de Notificación</label>
+                            <label for="fecha_notificacion"><i class="fas fa-calendar-day"></i> Fecha de Notificación o Inicio</label>
                             <input type="date" id="fecha_notificacion" class="form-control" required>
                         </div>
 
@@ -457,7 +546,7 @@
                         <div style="text-align: center; opacity: 0.6; margin-top: 50px;">
                             <i class="fas fa-calendar-check" style="font-size: 5rem; margin-bottom: 20px;"></i>
                             <h3>Ingrese los datos para calcular</h3>
-                            <p>El resultado aparecerá aquí.</p>
+                            <p>El resultado aparecerá aquí, considerando feriados nacionales y normativa vigente.</p>
                         </div>
                     </div>
 
@@ -480,9 +569,17 @@
                             <div class="detail-item">
                                 <i class="fas fa-book"></i>
                                 <div class="detail-text">
-                                    <h4>Base Legal</h4>
+                                    <h4>Base Legal Aplicable</h4>
                                     <p id="res_base">--</p>
                                 </div>
+                            </div>
+                        </div>
+
+                        <div class="exception-box" id="res_excepcion_box" style="display: none;">
+                            <i class="fas fa-info-circle"></i>
+                            <div>
+                                <h4 style="margin-bottom: 3px;">Excepción o Condición Especial</h4>
+                                <p id="res_excepcion">--</p>
                             </div>
                         </div>
 
@@ -506,105 +603,128 @@
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/plazos_db.js"></script>
     <script>
         AOS.init({ once: true });
 
-        // --- BASE DE DATOS DE PLAZOS Y TÉRMINOS ---
-        const normativas = {
-            civil: [
-                { id: "contestacion_ordinario", nombre: "Contestación Demanda (Ordinario)", dias: 30, tipo: "termino", base: "Art. 291 COGEP" },
-                { id: "contestacion_sumario", nombre: "Contestación Demanda (Sumario)", dias: 15, tipo: "termino", base: "Art. 333 num. 3 COGEP" },
-                { id: "contestacion_ejecutivo", nombre: "Contestación Demanda (Ejecutivo)", dias: 15, tipo: "termino", base: "Art. 351 COGEP" },
-                { id: "apelacion", nombre: "Recurso de Apelación", dias: 10, tipo: "termino", base: "Art. 256 COGEP" },
-                { id: "casacion", nombre: "Recurso de Casación", dias: 10, tipo: "termino", base: "Art. 267 COGEP" },
-                { id: "hecho", nombre: "Recurso de Hecho", dias: 3, tipo: "termino", base: "Art. 279 COGEP" },
-                { id: "aclaracion", nombre: "Aclaración y Ampliación", dias: 3, tipo: "termino", base: "Art. 253 COGEP" },
-                { id: "prueba", nombre: "Anuncio de Prueba Nueva (2da Instancia)", dias: 5, tipo: "termino", base: "Art. 258 COGEP" }
-            ],
-            penal: [
-                { id: "apelacion_sentencia", nombre: "Apelación de Sentencia", dias: 3, tipo: "plazo", base: "Art. 653 COIP" },
-                { id: "apelacion_auto", nombre: "Apelación de Auto", dias: 3, tipo: "plazo", base: "Art. 653 COIP" },
-                { id: "casacion_penal", nombre: "Recurso de Casación", dias: 5, tipo: "plazo", base: "Art. 657 COIP" },
-                { id: "aclaracion_penal", nombre: "Aclaración y Ampliación", dias: 3, tipo: "plazo", base: "Art. 660 COIP" },
-                { id: "contestacion_querella", nombre: "Contestación a Querella", dias: 10, tipo: "plazo", base: "Art. 648 COIP" }
-            ],
-            laboral: [
-                { id: "contestacion_sumario_lab", nombre: "Contestación Demanda Laboral (Sumario)", dias: 15, tipo: "termino", base: "Art. 333 COGEP / Art. 575 CT" },
-                { id: "visto_bueno", nombre: "Contestación Visto Bueno (Inspectoría)", dias: 2, tipo: "termino", base: "Art. 621 Código del Trabajo" },
-                { id: "apelacion_lab", nombre: "Apelación de Sentencia", dias: 10, tipo: "termino", base: "Art. 256 COGEP" }
-            ]
-        };
-
         // Lista de Feriados Nacionales (Ecuador 2024-2026 aproximados)
-        // El formato debe ser 'YYYY-MM-DD'
         const feriados = [
-            // 2024
             '2024-01-01', '2024-02-12', '2024-02-13', '2024-03-29', '2024-05-03', '2024-05-24', 
             '2024-08-09', '2024-10-11', '2024-11-01', '2024-11-04', '2024-12-25', '2024-12-30', '2024-12-31',
-            // 2025
             '2025-01-01', '2025-03-03', '2025-03-04', '2025-04-18', '2025-05-01', '2025-05-02',
             '2025-05-23', '2025-08-08', '2025-10-10', '2025-11-03', '2025-11-04', '2025-12-25', '2025-12-26',
-            // 2026
             '2026-01-01', '2026-02-16', '2026-02-17', '2026-04-03', '2026-05-01', '2026-05-22',
             '2026-08-10', '2026-10-09', '2026-11-02', '2026-11-03', '2026-12-25'
         ];
 
-        // Lógica de Interfaz Dinámica
-        const selectMateria = document.getElementById('materia');
+        let materiaSeleccionada = null;
+
+        const iconosMaterias = {
+            'civil': 'fa-scale-balanced',
+            'penal': 'fa-gavel',
+            'laboral': 'fa-hard-hat',
+            'familia': 'fa-users',
+            'administrativo': 'fa-landmark',
+            'constitucional': 'fa-book-open',
+            'transito': 'fa-car-burst'
+        };
+
+        // Construir grid de materias
+        const materiaGrid = document.getElementById('materia-grid');
+        for (const [key, mat] of Object.entries(normativas_db)) {
+            const card = document.createElement('div');
+            card.className = 'materia-card';
+            card.dataset.id = key;
+            
+            const shortName = mat.nombre.split(' (')[0];
+            const tags = mat.nombre.split(' (')[1] ? mat.nombre.split(' (')[1].replace(')', '') : '';
+
+            card.innerHTML = `
+                <i class="fa-solid ${iconosMaterias[key] || 'fa-balance-scale'}"></i>
+                <h4>${shortName}</h4>
+                <span>${tags}</span>
+            `;
+
+            card.addEventListener('click', function() {
+                document.querySelectorAll('.materia-card').forEach(c => c.classList.remove('active'));
+                this.classList.add('active');
+                seleccionarMateria(key);
+            });
+
+            materiaGrid.appendChild(card);
+        }
+
+        const selectProcedimiento = document.getElementById('procedimiento');
         const selectActuacion = document.getElementById('actuacion');
 
-        selectMateria.addEventListener('change', function() {
-            const mat = this.value;
-            selectActuacion.innerHTML = '<option value="" disabled selected>Seleccione la actuación</option>';
-            selectActuacion.disabled = false;
+        function seleccionarMateria(matKey) {
+            materiaSeleccionada = normativas_db[matKey];
             
-            if(normativas[mat]) {
-                normativas[mat].forEach(act => {
-                    const option = document.createElement('option');
-                    option.value = act.id;
-                    option.textContent = act.nombre;
-                    selectActuacion.appendChild(option);
-                });
-            }
+            // Llenar select de procedimientos
+            selectProcedimiento.innerHTML = '<option value="" disabled selected>Seleccione el procedimiento</option>';
+            materiaSeleccionada.procedimientos.forEach((proc, index) => {
+                const option = document.createElement('option');
+                option.value = index;
+                option.textContent = proc.nombre;
+                selectProcedimiento.appendChild(option);
+            });
+
+            document.getElementById('procedimiento-group').style.display = 'block';
+            document.getElementById('actuacion-group').style.display = 'none';
+            selectActuacion.innerHTML = '<option value="" disabled selected>Seleccione la actuación</option>';
+        }
+
+        selectProcedimiento.addEventListener('change', function() {
+            const procIndex = this.value;
+            const actuaciones = materiaSeleccionada.procedimientos[procIndex].actuaciones;
+            
+            selectActuacion.innerHTML = '<option value="" disabled selected>Seleccione la actuación</option>';
+            actuaciones.forEach((act, index) => {
+                const option = document.createElement('option');
+                option.value = index;
+                option.textContent = act.nombre;
+                selectActuacion.appendChild(option);
+            });
+
+            document.getElementById('actuacion-group').style.display = 'block';
         });
 
         // Lógica de Cálculo
         function esFeriadoOWikend(dateStr) {
-            const date = new Date(dateStr + 'T12:00:00'); // Evitar timezone issues
-            const diaSemana = date.getDay(); // 0: Dom, 6: Sab
-            
+            const date = new Date(dateStr + 'T12:00:00');
+            const diaSemana = date.getDay();
             if (diaSemana === 0 || diaSemana === 6) return true;
             if (feriados.includes(dateStr)) return true;
-            
             return false;
         }
 
         function formatoFecha(dateObj) {
             const opciones = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-            // Formatear manualmente para capitalizar el primer carácter si es necesario, pero es-EC sirve
             return dateObj.toLocaleDateString('es-EC', opciones);
         }
 
         function calcularPlazo() {
-            const matId = document.getElementById('materia').value;
-            const actId = document.getElementById('actuacion').value;
+            if (!materiaSeleccionada) {
+                alert('Seleccione una Materia Legal.');
+                return;
+            }
+
+            const procIndex = selectProcedimiento.value;
+            const actIndex = selectActuacion.value;
             const fechaNotifInput = document.getElementById('fecha_notificacion').value;
 
-            if (!matId || !actId || !fechaNotifInput) {
+            if (procIndex === "" || actIndex === "" || !fechaNotifInput) {
                 alert('Por favor, complete todos los campos.');
                 return;
             }
 
-            // Buscar configuración
-            const cfg = normativas[matId].find(a => a.id === actId);
-            if (!cfg) return;
+            const actuacion = materiaSeleccionada.procedimientos[procIndex].actuaciones[actIndex];
 
             let currentDate = new Date(fechaNotifInput + 'T12:00:00');
             let diasAgregados = 0;
-            const targetDias = cfg.dias;
+            const targetDias = actuacion.dias;
 
-            if (cfg.tipo === 'termino') {
-                // TÉRMINO: Solo días hábiles, empieza a correr el día hábil siguiente
+            if (actuacion.tipo === 'termino') {
                 while (diasAgregados < targetDias) {
                     currentDate.setDate(currentDate.getDate() + 1);
                     const dateStr = currentDate.toISOString().split('T')[0];
@@ -612,33 +732,44 @@
                         diasAgregados++;
                     }
                 }
-            } else {
-                // PLAZO: Todos los días (calendario), empieza al día siguiente
+            } else if (actuacion.tipo === 'plazo') {
                 currentDate.setDate(currentDate.getDate() + targetDias);
-                // NOTA LEGAL (COIP Art. 16/ COGEP): Si el plazo vence en día feriado o fin de semana,
-                // generalmente en materia procesal se prorroga al siguiente día hábil.
                 let dateStr = currentDate.toISOString().split('T')[0];
                 while(esFeriadoOWikend(dateStr)){
                     currentDate.setDate(currentDate.getDate() + 1);
                     dateStr = currentDate.toISOString().split('T')[0];
                 }
+            } else {
+                // indefinido o sin plazo estricto
             }
 
             // Mostrar Resultados
             document.getElementById('resultado-vacio').style.display = 'none';
             document.getElementById('resultado-calculado').style.display = 'block';
 
-            document.getElementById('res_fecha').textContent = formatoFecha(currentDate);
-            document.getElementById('res_dias').textContent = `${cfg.dias} días (${cfg.tipo})`;
-            document.getElementById('res_base').textContent = cfg.base;
+            if (actuacion.tipo === 'indefinido') {
+                document.getElementById('res_fecha').textContent = "Ilimitado / Sujeto a Condición";
+                document.getElementById('res_dias').textContent = "No aplica un término predeterminado";
+            } else {
+                document.getElementById('res_fecha').textContent = formatoFecha(currentDate);
+                document.getElementById('res_dias').textContent = `${actuacion.dias} días (${actuacion.tipo})`;
+            }
+            
+            document.getElementById('res_base').textContent = actuacion.base_legal;
+
+            if (actuacion.excepciones) {
+                document.getElementById('res_excepcion').textContent = actuacion.excepciones;
+                document.getElementById('res_excepcion_box').style.display = 'flex';
+            } else {
+                document.getElementById('res_excepcion_box').style.display = 'none';
+            }
 
             let warnText = "Presente su escrito antes de las 17h00 presencialmente o 23h59 vía ventanilla virtual.";
-            if(cfg.tipo === 'plazo') {
-                warnText = "Cálculo en PLAZO (días calendario). Si vencía en fin de semana/feriado, se ha trasladado al siguiente día hábil por mandato legal.";
+            if(actuacion.tipo === 'plazo') {
+                warnText = "Cálculo en PLAZO (días calendario). Si el vencimiento cayó en fin de semana o feriado, se trasladó al siguiente día hábil.";
             }
             document.getElementById('res_warning').textContent = warnText;
         }
-
     </script>
 </body>
 </html>
